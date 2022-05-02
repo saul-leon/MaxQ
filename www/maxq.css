@@ -1,0 +1,134 @@
+* {
+    cursor: default;
+    font-family: 'Cutive Mono', monospace;
+}
+
+/* __ Backgound __ */
+html, body {
+    background: rgba(0,0,0,0);
+}
+
+#video-background {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transition: all 500ms ease !important;
+}
+
+#video-background.blured {
+    filter: blur(5px);
+}
+
+/* __ omnibar __ */
+#omnibar-in {
+    position: fixed;
+    top: 1em;
+    left: calc(50% - 500px);
+
+    width: 1000px;
+    height: 60px;
+    
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(251, 251, 251);
+
+    /*backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255,255,255,0.7);
+    color: rgb(51, 51, 51);*/
+
+    font-size: 2.5em;
+    padding: 0 8px;
+
+    border-radius: 8px 8px 0 0;
+    border: 1px solid rgba(128,128,128,0.5);
+    border-bottom: 5px solid teal;
+
+    outline: none;
+    display: none;
+}
+
+#omnibar-out {
+    position: fixed;
+    top: 100px;
+    bottom: 3em;
+    left: calc(50% - 500px);
+
+    width: 998px; /* because border is 2px */
+
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(251, 251, 251);
+
+    /*backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255,255,255,0.7);
+    color: rgb(51, 51, 51);*/
+
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(128,128,128,0.5);
+    border-top: none;
+
+    display: none;
+    /* real display is grid */
+    grid-template-columns: 360px;
+    grid-gap: 5px;
+}
+
+#omnibar-top-hints {
+    grid-column: 1;
+    grid-row: 1;
+    overflow-y: auto;
+}
+
+#omnibar-top-hints .category {
+    padding: 2px 0 2px 8px;
+    color: gray;
+}
+
+#omnibar-top-hints .item_selected {
+    padding: 2px 0 2px 8px;
+    background: #008080a3;
+    border-radius: 6px;
+    margin: 0 8px 0 8px;
+}
+#omnibar-top-hints .item {
+    padding: 2px 0 2px 16px;
+}
+
+#omnibar-preview {
+    position: relative;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+    overflow-y: auto;
+}
+
+
+/* __ Widgets __ */
+.widgets {
+    transition: all 500ms ease !important;
+}
+
+.widgets.hide {
+    opacity: 0% !important;
+    transform: translateY(16px) !important;
+}
+
+#clock {
+    width: 200px;
+    position: fixed;
+    top: 1em;
+    left: calc(50% - 100px);
+    
+    text-align: center;
+    color: white;
+    text-shadow: 0px 6px 5px rgb(0 0 0 / 33%);
+}
+#clock .hour {
+    font-size: 8em;
+}
+#clock .date {
+    font-size: 1em;
+}
